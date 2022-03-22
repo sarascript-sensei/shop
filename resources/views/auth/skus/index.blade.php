@@ -26,7 +26,7 @@
                     <td>
                         <div class="btn-group" role="group">
                             <form action="{{ route('skus.destroy', [$product, $sku]) }}" method="POST">
-                                <a class="btn btn-success" type="button" href="{{ route('skus.show', [$product, $sku]) }}">Открыть</a>
+                                <a class="btn btn-success" type="button" href="{{ route('skus.show', ['product'=>$product, 'sku'=>$sku]) }}">Открыть</a>
                                 <a class="btn btn-warning" type="button" href="{{ route('skus.edit', [$product, $sku]) }}">Редактировать</a>
                                 @csrf
                                 @method('DELETE')

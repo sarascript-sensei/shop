@@ -3,6 +3,10 @@
 @section('title', __('basket.cart'))
 
 @section('content')
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <h1>@lang('basket.cart')</h1>
     <p>@lang('basket.ordering')</p>
     <div class="panel">
@@ -20,7 +24,7 @@
                 <tr>
                     <td>
                         <a href="{{ route('sku', [$sku->product->category->code, $sku->product->code, $sku]) }}">
-                            <img height="56px" src="{{ Storage::url($sku->product->image) }}">
+                            <img height="56px" src="{{($sku->product->image) }}">
                             {{ $sku->product->__('name') }}
                         </a>
                     </td>

@@ -85,14 +85,23 @@
                             </div>
                             <br>
 
-                        <div class="input-group row">
+                        <!-- <div class="input-group row">
                             <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
                             <div class="col-sm-10">
                                 <label class="btn btn-default btn-file">
                                     Загрузить <input type="file" style="display: none;" name="image" id="image">
                                 </label>
                             </div>
+                        </div> -->
+
+                        <div class="input-group row">
+                            <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="image" id="image"
+                                       value="@isset($category){{ $category->image }}@endisset">
+                            </div>
                         </div>
+
                         <button class="btn btn-success">Сохранить</button>
                     </div>
                 </form>

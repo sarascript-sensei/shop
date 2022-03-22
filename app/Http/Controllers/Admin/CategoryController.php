@@ -40,10 +40,10 @@ class CategoryController extends Controller
     public function store(CategoryRequest $request)
     {
         $params = $request->all();
-        unset($params['image']);
-        if ($request->has('image')) {
-            $params['image'] = $request->file('image')->store('categories');
-        }
+        // unset($params['image']);
+        // if ($request->has('image')) {
+        //     $params['image'] = $request->file('image')->store('categories');
+        // }
 
         Category::create($params);
         return redirect()->route('categories.index');
@@ -81,11 +81,11 @@ class CategoryController extends Controller
     public function update(CategoryRequest $request, Category $category)
     {
         $params = $request->all();
-        unset($params['image']);
-        if ($request->has('image')) {
-            Storage::delete($category->image);
-            $params['image'] = $request->file('image')->store('categories');
-        }
+        // unset($params['image']);
+        // if ($request->has('image')) {
+        //     Storage::delete($category->image);
+        //     $params['image'] = $request->file('image')->store('categories');
+        // }
 
         $category->update($params);
         return redirect()->route('categories.index');

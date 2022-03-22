@@ -32,7 +32,7 @@ class MerchantController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -44,7 +44,7 @@ class MerchantController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Merchant  $merchant
+     * @param \App\Models\Merchant $merchant
      * @return \Illuminate\Http\Response
      */
     public function show(Merchant $merchant)
@@ -55,7 +55,7 @@ class MerchantController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Merchant  $merchant
+     * @param \App\Models\Merchant $merchant
      * @return \Illuminate\Http\Response
      */
     public function edit(Merchant $merchant)
@@ -66,31 +66,10 @@ class MerchantController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Merchant  $merchant
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Merchant $merchant
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Merchant $merchant)
-    {
-        $merchant->update($request->all());
-        return redirect()->route('merchants.index');
-    }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Merchant  $merchant
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Merchant $merchant)
-    {
-        $merchant->delete();
-        return redirect()->route('merchants.index');
-    }
 
-    public function updateToken(Merchant $merchant)
-    {
-        session()->flash('success', $merchant->createToken());
-        return redirect()->route('merchants.index');
-    }
 }

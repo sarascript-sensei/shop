@@ -1,13 +1,19 @@
 <?php
 
 return [
-    'online_shop' => 'Online Shop',
+    'online_shop' => 'InaiShop',
     'all_products' => 'All products',
     'product' => 'Product',
     'categories' => 'Categories',
     'all_categories' => 'All categories',
     'category' => 'Category ',
     'cart' => 'Your cart',
+    'basket' => 'Basket',
+    'about_us' => 'About us',
+    'contact-us' => 'Contacts',
+    'successContact' => 'The message has been sent successfully! The admin will contact you soon!',
+    'intership' => 'Intership',
+    'blogs' => 'Blogs',
     'reset_project' => 'Reset project to default state',
     'current_lang' => 'en',
     'set_lang' => 'ru',

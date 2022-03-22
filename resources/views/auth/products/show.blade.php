@@ -41,13 +41,13 @@
             </tr>
             <tr>
                 <td>Картинка</td>
-                <td><img src="{{ Storage::url($product->image) }}" height="240px"></td>
+                <td><img src="{{($product->image) }}" height="240px"></td>
             </tr>
             <tr>
                 <td>Категория</td>
-                <td>{{ $product->category->name }}</td>
+                <td>{{ !empty($product->category) ? $product->category->name:'' }}</td>
             </tr>
-            <tr>
+            <!-- <tr>
                 <td>Лейблы</td>
                 <td>
                     @if($product->isNew())
@@ -62,7 +62,7 @@
                         <span class="badge badge-danger">Хит продаж!</span>
                     @endif
                 </td>
-            </tr>
+            </tr> -->
             </tbody>
         </table>
     </div>

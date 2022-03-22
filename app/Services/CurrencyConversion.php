@@ -7,7 +7,7 @@ use Carbon\Carbon;
 
 class CurrencyConversion
 {
-    public const DEFAULT_CURRENCY_CODE = 'RUB';
+    public const DEFAULT_CURRENCY_CODE = 'C';
 
     protected static $container;
 

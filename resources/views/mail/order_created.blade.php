@@ -8,7 +8,7 @@
         <tr>
             <td>
                 <a href="{{ route('sku', [$sku->product->category->code, $sku->product->code, $sku]) }}">
-                    <img height="56px" src="{{ Storage::url($sku->product->image) }}">
+                    <img height="56px" src="{{($sku->product->image) }}">
                     {{ $sku->product->__('name') }}
                 </a>
             </td>

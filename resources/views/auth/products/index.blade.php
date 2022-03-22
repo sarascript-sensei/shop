@@ -32,7 +32,7 @@
                     <td>{{ $product->id}}</td>
                     <td>{{ $product->code }}</td>
                     <td>{{ $product->name }}</td>
-                    <td>{{ $product->category->name }}</td>
+                    <td>{{ !empty($product->category) ? $product->category->name:'' }}</td>
                     <td></td>
                     <td>
                         <div class="btn-group" role="group">

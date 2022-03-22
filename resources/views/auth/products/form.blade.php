@@ -88,14 +88,21 @@
                         </div>
                     </div>
                     <br>
-                <div class="input-group row">
+                <!-- <div class="input-group row">
                     <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
                     <div class="col-sm-10">
                         <label class="btn btn-default btn-file">
                             Загрузить <input type="file" style="display: none;" name="image" id="image">
                         </label>
                     </div>
-                </div>
+                </div> -->
+                <div class="input-group row">
+                            <label for="image" class="col-sm-2 col-form-label">Картинка: </label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" name="image" id="image"
+                                       value="@isset($product){{ $product->image }}@endisset">
+                            </div>
+                        </div>
                 <br>
 
                 <div class="input-group row">
@@ -117,7 +124,7 @@
                 </div>
                 <br>
 
-                @foreach ([
+                <!-- @foreach ([
                 'hit' => 'Хит',
                 'new' => 'Новинка',
                 'recommend' => 'Рекомендуемые'
@@ -133,7 +140,7 @@
                         </div>
                     </div>
                     <br>
-                @endforeach
+                @endforeach -->
                 <button class="btn btn-success">Сохранить</button>
             </div>
         </form>

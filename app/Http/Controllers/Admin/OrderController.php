@@ -19,3 +19,4 @@ class OrderController extends Controller
         return view('auth.orders.show', compact('order', 'skus'));
     }
 }
+

@@ -57,9 +57,9 @@ class SkuController extends Controller
      * @param  Sku  $skus
      * @return void
      */
-    public function show(Product $product, Sku $skus)
+    public function show(Product $product, Sku $sku)
     {
-        return view('auth.skus.show', compact('product', 'skus'));
+        return view('auth.skus.show', compact('product', 'sku'));
     }
 
     /**
@@ -69,9 +69,9 @@ class SkuController extends Controller
      * @param  Sku  $skus
      * @return void
      */
-    public function edit(Product $product, Sku $skus)
+    public function edit(Product $product, Sku $sku)
     {
-        return view('auth.skus.form', compact('product', 'skus'));
+        return view('auth.skus.form', compact('product', 'sku'));
     }
 
     /**
@@ -82,12 +82,12 @@ class SkuController extends Controller
      * @param  Sku  $skus
      * @return void
      */
-    public function update(Request $request, Product $product, Sku $skus)
+    public function update(Request $request, Product $product, Sku $sku)
     {
         $params = $request->all();
         $params['product_id'] = $request->product->id;
-        $skus->update($params);
-        $skus->propertyOptions()->sync($request->property_id);
+        $sku->update($params);
+        $sku->propertyOptions()->sync($request->property_id);
         return redirect()->route('skus.index', $product);
     }
 
@@ -99,9 +99,9 @@ class SkuController extends Controller
      * @return void
      * @throws \Exception
      */
-    public function destroy(Product $product, Sku $skus)
+    public function destroy(Product $product, Sku $sku)
     {
-        $skus->delete();
+        $sku->delete();
         return redirect()->route('skus.index', $product);
     }
 }

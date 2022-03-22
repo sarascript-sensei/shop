@@ -9,7 +9,7 @@
             <tbody>
             <tr>
                 <th>
-                    #
+                    ID
                 </th>
                 <th>
                     Свойство
@@ -22,6 +22,7 @@
                 </th>
             </tr>
             @foreach($propertyOptions as $propertyOption)
+                @if($propertyOption->property_id == $property->id)
                 <tr>
                     <td>{{ $propertyOption->id }}</td>
                     <td>{{ $property->name }}</td>
@@ -37,6 +38,8 @@
                         </div>
                     </td>
                 </tr>
+                @else
+                @endif
             @endforeach
             </tbody>
         </table>

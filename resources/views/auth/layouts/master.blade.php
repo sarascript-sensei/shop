@@ -34,8 +34,11 @@
                     <li><a href="{{ route('products.index') }}">Товары</a>
                     <li><a href="{{ route('properties.index') }}">Свойства</a>
                     <li><a href="{{ route('coupons.index') }}">Купоны</a>
-                    <li><a href="{{ route('merchants.index') }}">Поставщики</a>
-                    </li>
+                    <!--<li><a href="{{ route('merchants.index') }}">Поставщики</a>-->
+                    <li><a href="{{ route('emails.contactus') }}">Запросы</a>
+                    <li><a href="{{ route('blogs.index') }}">Блоги</a></li>
+                    <li><a href="{{ route('aboutUs.index') }}">О нас</a></li>
+                    <!-- </li> -->
                     <li><a href="{{ route('home') }}">Заказы</a></li>
                     @endadmin
                 </ul>

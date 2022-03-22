@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ProductsFilterRequest;
 use App\Http\Requests\SubscriptionRequest;
+use App\Models\AboutUs;
 use App\Models\Category;
 use App\Models\Currency;
+use App\Models\Blogs;
 use App\Models\Product;
 use App\Models\Sku;
 use App\Models\Subscription;
@@ -26,13 +28,13 @@ class MainController extends Controller
             $skusQuery->where('price', '<=', $request->price_to);
         }
 
-        foreach (['hit', 'new', 'recommend'] as $field) {
+/*        foreach (['hit', 'new', 'recommend'] as $field) {
             if ($request->has($field)) {
                 $skusQuery->whereHas('product', function ($query) use ($field) {
                     $query->$field();
                 });
             }
-        }
+        }*/
 
         $skus = $skusQuery->paginate(6)->withPath("?".$request->getQueryString());
 
@@ -41,9 +43,30 @@ class MainController extends Controller
 
     public function categories()
     {
-        return view('categories');
+        return view('categories',['categories' => Category::all(),]);
+    }
+    public function blog($id)
+    {
+
+        $blog = Blogs::findOrFail($id);
+    return view('blog', compact('blog'));
+    }
+    public function blogs()
+    {
+        $blogs = Blogs::all();
+        return view('blogs',compact('blogs'));
     }
 
+    public function aboutus()
+    {
+        $aboutUs = AboutUs::all();
+        return view('aboutus', compact('aboutUs'));
+    }
+    public function about(AboutUs $aboutUs)
+    {
+
+        return view('aboutUs', compact('aboutUs'));
+    }
     public function category($code)
     {
         $category = Category::where('code', $code)->first();
